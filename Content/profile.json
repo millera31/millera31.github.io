@@ -28,7 +28,7 @@
 },
 "Project1": {
     "Title": "Interesting Project 1",
-    "Desc": "This is a description of Project One.<br><br>It has a GitHub repo and more details shown in screenshots.",
+    "Desc": "Here's the link to my System Proposal: https://spuonline-my.sharepoint.com/:w:/r/personal/millera31_spu_edu/Documents/Miller%20Allie%20-%20(No%20Markups%20Ver)%20System%20Proposal%20Part%201+2-%20MuscleMate%20-%20v2%20(1).docx?d=w7a9e088c61cb427badc47824329b7bcd&csf=1&web=1&e=XS5QYo .<br><br>Here's the link to my System Specification: https://spuonline-my.sharepoint.com/:w:/r/personal/millera31_spu_edu/Documents/CSC3150%20-%20System%20Specification%20-%20Miller%20Allie%20-%20v1.docx?d=w1bf8a8836f4444d89df14344d7421b72&csf=1&web=1&e=OhdsZy .",
     "GitHubRepo": "https://github.com",
     "MainImage": "P1Main.png",
     "DetailImages": ["P1Detail1.png","P1Detail2.png","P1Detail3.png"]
