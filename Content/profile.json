@@ -27,10 +27,8 @@
   "Resume": "student-resume.pdf"  
 },
 "Project1": {
-    "Title": "MuscleMate",
-    "Desc": "Here's the links to my System Proposal: https://spuonline-my.sharepoint.com/:w:/r/personal/millera31_spu_edu/Documents/Miller%20Allie%20-%20(No%20Markups%20Ver)%20System%20Proposal%20Part%201+2-%20MuscleMate%20-%20v2%20(1).docx?d=w7a9e088c61cb427badc47824329b7bcd&csf=1&web=1&e=O8vyc3
-  and System Specification: https://spuonline-my.sharepoint.com/:w:/g/personal/millera31_spu_edu/EYOo-BtEb9hEnfFDRNdCG3IBLsHjqVPajkG8korrclObUw?e=GoHKmE
-  There's more details shown in screenshots.",
+    "Title": "Interesting Project 1",
+    "Desc": "This is a description of Project One.<br><br>It has a GitHub repo and more details shown in screenshots.",
     "GitHubRepo": "https://github.com",
     "MainImage": "P1Main.png",
     "DetailImages": ["P1Detail1.png","P1Detail2.png","P1Detail3.png"]
