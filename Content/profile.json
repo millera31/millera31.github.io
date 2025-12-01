@@ -1,57 +1,56 @@
 {
-"About": {
-  "Name": "Allie Miller",
-  "Currently": "Computer Science Student",
-  "Headshot": "Student Portrait.png",
-  "Thumbnail": "Student Portrait.png",
-  "AboutText": "Hi, I am Allie Miller. I am a passionate computer science student with a keen interest in software development and programming. Currently, I am pursuing my undergraduate degree at Seattle Pacific University. I am dedicated to expanding my knowledge and skills in various areas of computer science, with a particular focus on C++ programming.<br><br>I enjoy tackling challenging programming projects and I thrive in collaborative environments where I can contribute my expertise and learn from my peers.<br><br>I believe in the importance of continuous learning and seek out opportunities to explore new technologies and methodologies."
-},
-"Contact": {
-  "EMail": "millera31@spu.edu",
-  "Phone": "(206) 518-0070",
-  "Portfolio": "https://www.github.com",
-  "LinkedIn": "https://linkedin.com",
-  "GitHub": "https://www.github.com"
-},
-"Experience": {
-  "ExperienceText": "Use this area to explain how you got to where you are and what you are currently doing now.<br><br>This is a good spot to talk yourself up.",
-  "School": "Seattle Pacific University",
-  "Major": "Computer Science",
-  "Graduation": "June 2026",
-  "EducationText": "Use this to add some narrative to your education section",
-  "Employment": "Seattle Pacific University",
-  "Role": "Computer Science Lab Assistant",
-  "EmploymentText": "Use this to add some narrative to your employment section",
-  "Skills": ["C++", " JavaScript", " Node", " CSS"," HTML"],
-  "SkillsText": "Use this to add some narrative to your skills section",
-  "Resume": "student-resume.pdf"  
-},
-"Project1": {
-    "Title": "MuscleMate",
-    "Desc": "MuscleMate is a fitness-tracking app for intermediate and advanced lifters. It features customizable workout logging, a workout history to view past workouts, progress tracking for key lifts, and a coach view where coaches can monitor clients' progress. The app avoids unnecessary pre-made templates and form tutorials, focusing instead on user customization. For more details, see the:<br><br>System Proposal: https://spuonline-my.sharepoint.com/:w:/r/personal/millera31_spu_edu/Documents/Miller%20Allie%20-%20(No%20Markups%20Ver)%20System%20Proposal%20Part%201+2-%20MuscleMate%20-%20v2%20(1).docx?d=w7a9e088c61cb427badc47824329b7bcd&csf=1&web=1&e=O8vyc3<br><br>System Specification: https://spuonline-my.sharepoint.com/:w:/r/personal/millera31_spu_edu/Documents/CSC3150%20-%20System%20Specification%20-%20Miller%20Allie%20-%20v1.docx?d=w1bf8a8836f4444d89df14344d7421b72&csf=1&web=1&e=OhdsZy.",
-    "GitHubRepo": "https://github.com",
+  "About": {
+    "Name": "Allie Miller",
+    "Currently": "Computer Science Student | Data Analytics Minor",
+    "Headshot": "AlliePic.JPG",
+    "Thumbnail": "AlliePic.JPG",
+    "AboutText": "Hi, I'm Allie Miller! I'm a software developer and computer science major at Seattle Pacific University graduating in June 2026. I’m passionate about building practical, real-world software, whether that’s mobile apps, internal automation tools, data workflows, or compiler front-end projects. I enjoy working across multiple languages and ecosystems, including C++, Go, JavaScript/React, SQL, and cloud-based AI tools. I love taking on technical challenges, understanding how systems work end-to-end, and creating solutions that make people’s lives easier. Outside of school, I work as a Software Developer at GreeneIS where I help build internal applications, develop Power Apps tools, design n8n workflow automations, support Teams chatbot integrations, and contribute to team communication and planning. I’m also continuously growing my technical skills through certifications, hands-on projects, and professional experience."
+  },
+  "Contact": {
+    "EMail": "millera31@spu.edu",
+    "Phone": "(206) 518-0070",
+    "Portfolio": "https://www.github.com",
+    "LinkedIn": "https://www.linkedin.com/in/allie-a-miller",
+    "GitHub": "https://github.com/millera31"
+  },
+  "Experience": {
+    "ExperienceText": "I’ve built experience across software development, workflow automation, and full-stack projects through my coursework, personal projects, and my role at GreeneIS. My technical background ranges from systems programming in C++ and building lexical/syntax analyzers in Go, to web development, Power Apps solutions, and cloud-based automation using n8n and Dataverse. I enjoy collaborating on teams, communicating clearly, and building tools that simplify processes and deliver real value.",
+    "School": "Seattle Pacific University",
+    "Major": "Computer Science Major, Data Analytics",
+    "Graduation": "June 2026",
+    "EducationText": "At SPU, my coursework has built a strong foundation in software engineering, systems, data, and programming languages, including classes such as Systems Design, Data Structures, Database Systems, Software Engineering I, Netcentric Computing, Applications Programming, Computer Organization & Assembly Language, Concepts in Programming Languages, Introduction to Data Science, and Data and Society. My academic projects have helped me build strong technical foundations, including work in C++, Go, Scheme, Prolog, JavaScript/React, and SQL.",
+    "Employment": "GreeneIS",
+    "Role": "Software Developer",
+    "EmploymentText": "At GreeneIS, I work as a Software Developer supporting automation and internal app development. My responsibilities include building n8n workflows, developing and maintaining Power Apps tools, integrating Teams chatbots with SharePoint and Dataverse, and helping organize and communicate project progress across the team. My work involves using APIs, cloud services, and data systems to streamline and automate internal IT processes.",
+    "Skills": ["JavaScript", "React Native", "Node.js", "SQL", "R", "C++", "HTML", "CSS", "Go", "Prolog", "Scheme"],
+    "SkillsText": "My strengths include full-stack development, automation, API integration, AI tools, compiler and language design basics, data modeling, and creating internal tools that solve real problems. I enjoy learning new technologies quickly and adapting them into real company workflows and school projects.",
+    "Resume": "MillerAllieResume.pdf"
+  },
+  "Project1": {
+    "Title": "MuscleMate (In Progress)",
+    "Desc": "MuscleMate is a fitness-tracking app for intermediate and advanced lifters. It features customizable workout logging, a workout history to view past workouts, progress tracking for key lifts, and a coach view where coaches can monitor clients' progress. The app avoids unnecessary pre-made templates and form tutorials, focusing instead on user customization.",
     "MainImage": "MuscleMate.png",
-    "DetailImages": ["MuscleMateHP.png","P1Detail2.png","P1Detail3.png"]
+    "DetailImages": ["MuscleMateHP.png"]
   },
   "Project2": {
-    "Title": "Interesting Project 2",
-    "Desc": "This is a description of Project Two.<br><br>It also has a GitHub repo and more details shown in screenshots.",
-    "GitHubRepo": "https://github.com",
-    "MainImage": "P2Main.png",
-    "DetailImages": ["P2Detail1.png","P2Detail2.png","P2Detail3.png","P2Detail4.png"]
+    "Title": "TripSplit (Expected Completion: June 2026)",
+    "Desc": "TripSplit is a mobile expense-splitting app designed for group travel. It uses AI-powered receipt scanning to automatically extract itemized costs, calculate fair splits, and track who owes what in real-time. Built with React Native, Node.js, and SQL, TripSplit eliminates the hassle of managing shared travel expenses with features like offline support, duplicate receipt detection, and customizable expense splitting. My main role is working on the frontend of the app.",
+    "MainImage": "TripSplit_Logo.png",
+    "DetailImages": []
   },
   "Project3": {
-    "Title": "Interesting Project 3",
-    "Desc": "This is a description of Project Three.<br><br>It does not have a GitHub repo or any additional screenshots.",
-    "GitHubRepo": "",
-    "MainImage": "P3Main.png",
+    "Title": "Go Syntax Parser & Lexical Analyzer",
+    "Desc": "A full compiler front-end project written in Go, built for my Programming Languages course. I designed a custom grammar, implemented a full lexical analyzer, and built a recursive-descent parser capable of validating and analyzing programs written in the statically-typed Pico language. This project required designing tokens, building a symbol table, handling errors cleanly, and producing structured parse output. It helped deepen my understanding of compiler design, lexing, parsing, and language theory.",
+    "GitHubRepo": "https://github.com/csc3310-fall2025/parser-millera31",
+    "MainImage": "Parser.png",
     "DetailImages": []
   },
   "Project4": {
-    "Title": "",
-    "Desc": "",
-    "GitHubRepo": "",
-    "MainImage": "",
+    "Title": "Desegregating Schools - Data Analytics Project",
+    "Desc": "Desegregating Schools: Charlotte & Seattle is a data science project examining how school diversity relates to neighborhood rent levels in Seattle and Charlotte. Our team combined public school enrollment data, census variables, GIS shapefiles, and rent datasets to analyze spatial patterns of segregation and housing affordability. I led the Seattle data work, including cleaning enrollment data, creating a school-to-neighborhood matching table, merging spatial files, and producing the Seattle scatterplot showing the relationship between rent and percent students of color. As a team, we built maps, scatterplots, and an interactive Shiny app using R (ggplot2, sf, tmap, leaflet) to compare citywide trends. Our findings show clear disparities: schools in higher-rent neighborhoods tend to enroll fewer students of color, while more affordable areas are significantly more diverse. The project highlights how housing patterns and gentrification continue to shape educational equity.",
+    "GitHubRepo": "https://github.com/millera31/desegregating-schools",
+    "MainImage": "Scatterplot.png",
+    "LiveDemo": "https://millera31.github.io/desegregating-schools/",
     "DetailImages": []
   }
 }

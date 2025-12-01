@@ -1,102 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
+    <meta name="description" content="Portfolio projects by Allie Miller - Software engineering and development work">
+    <title>Projects | Allie Miller Portfolio</title>
     <link rel="stylesheet" href="./Styles/style.css">
 </head>
 <body>
-    <div>
-        <nav id="menu">
-            <div>
-                <div class="self-photo">
-                    <a href="index.html">
-                        <img id="pfThumbnail" src="" alt="Mini Me">
-                    </a>
-                </div>
-                <ul class="menu-list">
-                    <a href="index.html">
-                        <li>About</li>
-                    </a>
-                    <a href="projects.html">
-                        <li>Projects</li>
-                    </a>
-                    <a href="experience.html">
-                        <li>Experience</li>
-                    </a>
-                </ul>
-            </div>
-            <div class="icons">
-                <a id="pfLinkedIn" href="" target="_blank" rel="noopener noreferrer">
-                    <img src="./Icons/In-White-40@2x.png">
-                </a>
-                <a id="pfGitHub" href="" target="_blank" rel="noopener noreferrer">
-                    <img src="./Icons/github-mark-white.png" alt="">
+    <!-- Navigation -->
+    <nav id="menu" aria-label="Main navigation">
+        <div>
+            <div class="self-photo">
+                <a href="index.html" aria-label="Return to home page">
+                    <img id="pfThumbnail" src="" alt="Profile thumbnail">
                 </a>
             </div>
-        </nav>
-    </div>
-    <!-- This section is unique to the projects area -->
-    <div class="main-section">
-        <div class="page-title">
+            <ul class="menu-list">
+                <li><a href="index.html">About</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+            </ul>
+        </div>
+        <div class="icons">
+            <a id="pfLinkedIn" href="" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                <img src="./Icons/In-White-40@2x.png" alt="LinkedIn">
+            </a>
+            <a id="pfGitHub" href="" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                <img src="./Icons/github-mark-white.png" alt="GitHub">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-section">
+        <header class="page-title">
             <h1>Projects</h1>
-        </div>
-        <div id="project1" class="project">
-            <div class="project-image">
-                <img id="pfProject1Img" src="" alt="Project 1">
-                <button id="openProject1" value="1">See More...</button>
-            </div>
-            <div class="project-detail">
-                <h2 id="pfProject1Title"></h2>
-                <p id="pfProject1Desc"></p>
-                <a href="" target="_blank" id="pfProject1Repo">GitHub Repo</a>
-            </div>
-        </div>
-        <div id="project2" class="project">
-            <div class="project-image">
-                <img id="pfProject2Img" src="" alt="Project 2">
-                <button id="openProject2" value="2">See More...</button>
-            </div>
-            <div class="project-detail">
-                <h2 id="pfProject2Title"></h2>
-                <p id="pfProject2Desc"></p>
-                <a href="" target="_blank" id="pfProject2Repo">GitHub Repo</a>
-            </div>
-        </div>
-        <div id="project3" class="project">
-            <div class="project-image">
-                <img id="pfProject3Img" src="" alt="Project 3">
-                <button id="openProject3" value="3">See More...</button>
-            </div>
-            <div class="project-detail">
-                <h2 id="pfProject3Title"></h2>
-                <p id="pfProject3Desc"></p>
-                <a href="" target="_blank" id="pfProject3Repo">GitHub Repo</a>
-            </div>
-        </div>
-        <div id="project4" class="project">
-            <div class="project-image">
-                <img id="pfProject4Img" src="" alt="Project 4">
-                <button id="openProject4" value="4">See More...</button>
-            </div>
-            <div class="project-detail">
-                <h2 id="pfProject4Title"></h2>
-                <p id="pfProject4Desc"></p>
-                <a href="" target="_blank" id="pfProject4Repo">GitHub Repo</a>
-            </div>
-        </div>
-        <!-- Image Carousel -->
-        <div id="modalPage">
-            <div class="carousel">
-                <p id="XOut">&times;</p>
-                <div id="imgList">
+        </header>
+
+        <!-- Solo Projects Section -->
+        <section class="projects-category">
+            <h2 class="category-title">Solo Projects</h2>
+
+            <!-- Project 1 - MuscleMate -->
+            <article id="project1" class="project">
+                <div class="project-image">
+                    <img id="pfProject1Img" src="" alt="Project 1 screenshot">
+                    <button id="openProject1" value="1" aria-label="View more images for this project">
+                        See More...
+                    </button>
+                    <!-- Document links for PDFs -->
+                    <div class="document-links">
+                        <button id="viewProposal1" class="doc-button" aria-label="View System Proposal PDF">
+                            System Proposal
+                        </button>
+                        <button id="viewSpec1" class="doc-button" aria-label="View System Specification PDF">
+                            System Specification
+                        </button>
+                    </div>
                 </div>
-                <a id="prev">&#10094;</a>
-                <a id="next">&#10095;</a>
+                <div class="project-detail">
+                    <h2 id="pfProject1Title"></h2>
+                    <p id="pfProject1Desc"></p>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="pfProject1Repo">GitHub Repository</a>
+                </div>
+            </article>
+
+            <!-- Project 3 - Go Parser -->
+            <article id="project3" class="project">
+                <div class="project-image">
+                    <img id="pfProject3Img" src="" alt="Project 3 screenshot">
+                    <button id="openProject3" value="3" aria-label="View more images for this project">
+                        See More...
+                    </button>
+                </div>
+                <div class="project-detail">
+                    <h2 id="pfProject3Title"></h2>
+                    <p id="pfProject3Desc"></p>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="pfProject3Repo">GitHub Repository</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Team Projects Section -->
+        <section class="projects-category">
+            <h2 class="category-title">Team Projects</h2>
+
+            <!-- Project 2 - TripSplit -->
+            <article id="project2" class="project">
+                <div class="project-image">
+                    <img id="pfProject2Img" src="" alt="Project 2 screenshot">
+                    <button id="openProject2" value="2" aria-label="View more images for this project">
+                        See More...
+                    </button>
+                    <!-- Document links for PDFs -->
+                    <div class="document-links">
+                        <button id="viewProposal2" class="doc-button" aria-label="View TripSplit Proposal PDF">
+                            Team Proposal
+                        </button>
+                    </div>
+                </div>
+                <div class="project-detail">
+                    <h2 id="pfProject2Title"></h2>
+                    <p id="pfProject2Desc"></p>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="pfProject2Repo">GitHub Repository</a>
+                </div>
+            </article>
+
+            <!-- Project 4 - Desegregating Schools -->
+            <article id="project4" class="project">
+                <div class="project-image">
+                    <img id="pfProject4Img" src="" alt="Project 4 screenshot">
+                    <button id="openProject4" value="4" aria-label="View more images for this project">
+                        See More...
+                    </button>
+                    <!-- Live Demo Button -->
+                    <div class="document-links">
+                        <button id="liveDemo4" class="demo-button" aria-label="View live demo">
+                            View Website
+                        </button>
+                    </div>
+                </div>
+                <div class="project-detail">
+                    <h2 id="pfProject4Title"></h2>
+                    <p id="pfProject4Desc"></p>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="pfProject4Repo">GitHub Repository</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Image Carousel Modal -->
+        <div id="modalPage" role="dialog" aria-label="Image carousel" aria-modal="true">
+            <div class="carousel">
+                <button id="XOut" aria-label="Close carousel">&times;</button>
+                <div id="imgList" role="region" aria-live="polite"></div>
+                <button id="prev" aria-label="Previous image">&#10094;</button>
+                <button id="next" aria-label="Next image">&#10095;</button>
             </div>
-        </div>        
-    </div>
+        </div>
+
+        <!-- PDF Viewer Modal -->
+        <div id="pdfModal" role="dialog" aria-label="PDF document viewer" aria-modal="true">
+            <div class="pdf-viewer">
+                <button id="closePDF" aria-label="Close PDF viewer">&times;</button>
+                <h2 id="pdfTitle"></h2>
+                <iframe id="pdfFrame" title="PDF document viewer"></iframe>
+            </div>
+        </div>
+    </main>
+
     <script type="module" src="./Scripts/GetProjects.js"></script>
+    <script type="module" src="./Scripts/PDFViewer.js"></script>
 </body>
 </html>
