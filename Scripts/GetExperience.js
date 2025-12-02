@@ -25,6 +25,7 @@ function updateHTML(configData) {
     updateEmploymentSection(configData);
     updateSkillsSection(configData);
     setupResumeButton(configData);
+    initializePDFViewer(); // Initialize PDF viewer modal
 }
 
 /**
@@ -140,7 +141,7 @@ function setupResumeButton(configData) {
     if (resumeButton && configData.Experience.Resume) {
         resumeButton.addEventListener('click', () => {
             const url = `./Content/${configData.Experience.Resume}`;
-            window.open(url, "_blank", "noopener,noreferrer");
+            openPDF(url, "Resume");
         });
     }
 }
@@ -157,5 +158,77 @@ function displayErrorMessage() {
                 <p>Unable to load experience information. Please try refreshing the page.</p>
             </div>
         `;
+    }
+}
+
+/* ===================================
+   PDF VIEWER FUNCTIONALITY
+   =================================== */
+
+/**
+ * Initializes the PDF viewer modal and event listeners
+ */
+function initializePDFViewer() {
+    const closePDF = document.querySelector("#closePDF");
+    const pdfModal = document.querySelector("#pdfModal");
+    
+    // Close PDF handlers
+    if (closePDF) {
+        closePDF.addEventListener('click', closePDFViewer);
+    }
+    
+    // Click outside to close
+    if (pdfModal) {
+        pdfModal.addEventListener('click', (event) => {
+            if (event.target === pdfModal) {
+                closePDFViewer();
+            }
+        });
+    }
+    
+    // Escape key to close
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && pdfModal?.style.display === 'flex') {
+            closePDFViewer();
+        }
+    });
+}
+
+/**
+ * Opens the PDF viewer modal with specified document
+ * @param {string} pdfPath - Path to the PDF file
+ * @param {string} title - Title to display in the viewer
+ */
+function openPDF(pdfPath, title) {
+    const pdfModal = document.querySelector("#pdfModal");
+    const pdfFrame = document.querySelector("#pdfFrame");
+    const pdfTitle = document.querySelector("#pdfTitle");
+    
+    if (!pdfModal || !pdfFrame) return;
+    
+    // Set the PDF source and title
+    pdfFrame.src = pdfPath;
+    if (pdfTitle) pdfTitle.textContent = title;
+    
+    // Show the modal
+    pdfModal.style.display = "flex";
+    document.body.classList.add('no-scroll'); // Prevent background scrolling
+}
+
+/**
+ * Closes the PDF viewer modal
+ */
+function closePDFViewer() {
+    const pdfModal = document.querySelector("#pdfModal");
+    const pdfFrame = document.querySelector("#pdfFrame");
+    
+    if (pdfModal) {
+        pdfModal.style.display = "none";
+        document.body.classList.remove('no-scroll');
+    }
+    
+    // Clear the iframe source to stop loading
+    if (pdfFrame) {
+        pdfFrame.src = "";
     }
 }

@@ -86,6 +86,15 @@
                 </li>
             </ul>
         </section>
+
+        <!-- PDF Viewer Modal -->
+        <div id="pdfModal" role="dialog" aria-label="PDF document viewer" aria-modal="true">
+            <div class="pdf-viewer">
+                <button id="closePDF" aria-label="Close PDF viewer">&times;</button>
+                <h2 id="pdfTitle"></h2>
+                <iframe id="pdfFrame" title="PDF document viewer"></iframe>
+            </div>
+        </div>
     </main>
 
     <script type="module" src="./Scripts/GetExperience.js"></script>

@@ -227,6 +227,12 @@ p {
     margin-right: auto;
 }
 
+/* But let the PDF modal break out to full screen */
+.main-section > #pdfModal {
+    max-width: none;
+    margin: 0;
+}
+
 .page-title {
     color: var(--color-text-dark);
     font-size: 4rem;
@@ -744,45 +750,44 @@ p {
    PDF VIEWER MODAL
    =================================== */
 #pdfModal {
-    display: none; /* JS will set to flex */
+    display: none;                 /* JS will set this to flex when open */
     position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    animation: fadeIn var(--transition-fast);
+    inset: 0;                      /* top/right/bottom/left:0 */
+    z-index: 2000;                 /* Higher than menu */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
 
-    /* center the viewer */
+    /* Center the viewer */
     justify-content: center;
     align-items: center;
 }
 
 .pdf-viewer {
-    width: 90%;
-    max-width: 1100px;
-    height: 90%;
-    max-height: 800px;
-    margin: 0;  /* centered by flexbox */
+    width: 95vw;                   /* Almost full width */
+    height: 95vh;                  /* Almost full height */
     background-color: var(--color-bg-dark);
-    border-radius: var(--border-radius);
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     position: relative;
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
 }
 
 #closePDF {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 1.5rem;
+    right: 2rem;
     font-size: 4rem;
     color: var(--color-text-light);
     cursor: pointer;
     background: none;
     border: none;
     transition: color var(--transition-fast);
-    z-index: 1001;
+    z-index: 2100;
+    padding: 0;
+    line-height: 1;
 }
 
 #closePDF:hover,
@@ -793,9 +798,11 @@ p {
 #pdfTitle {
     color: var(--color-text-light);
     text-align: center;
-    padding: var(--spacing-md);
-    font-size: 2.4rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 2.2rem;
     margin: 0;
+    flex-shrink: 0; /* Prevent title from shrinking */
+    background-color: var(--color-bg-dark);
 }
 
 #pdfFrame {
@@ -803,7 +810,8 @@ p {
     width: 100%;
     border: none;
     background-color: var(--color-text-light);
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border-radius: 0;
+    min-height: 0; /* Important for flexbox */
 }
 
 /* ===================================
@@ -885,9 +893,10 @@ p {
     
     /* PDF Viewer responsive */
     .pdf-viewer {
-        width: 95%;
-        height: 95%;
-        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
     }
     
     #pdfTitle {
@@ -897,8 +906,8 @@ p {
     
     #closePDF {
         font-size: 3rem;
-        top: 5px;
-        right: 10px;
+        top: 0.8rem;
+        right: 1rem;
     }
     
     .document-links {
