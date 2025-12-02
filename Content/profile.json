@@ -16,7 +16,7 @@
   "Experience": {
     "ExperienceText": "I’ve built experience across software development, workflow automation, and full-stack projects through my coursework, personal projects, and my role at GreeneIS. My technical background ranges from systems programming in C++ and building lexical/syntax analyzers in Go, to web development, Power Apps solutions, and cloud-based automation using n8n and Dataverse. I enjoy collaborating on teams, communicating clearly, and building tools that simplify processes and deliver real value.",
     "School": "Seattle Pacific University",
-    "Major": "Computer Science Major, Data Analytics",
+    "Major": "Computer Science Major, Data Analytics Minor",
     "Graduation": "June 2026",
     "EducationText": "At SPU, my coursework has built a strong foundation in software engineering, systems, data, and programming languages, including classes such as Systems Design, Data Structures, Database Systems, Software Engineering I, Netcentric Computing, Applications Programming, Computer Organization & Assembly Language, Concepts in Programming Languages, Introduction to Data Science, and Data and Society. My academic projects have helped me build strong technical foundations, including work in C++, Go, Scheme, Prolog, JavaScript/React, and SQL.",
     "Employment": "GreeneIS",
@@ -40,7 +40,7 @@
   },
   "Project3": {
     "Title": "Go Syntax Parser & Lexical Analyzer",
-    "Desc": "A full compiler front-end project written in Go, built for my Programming Languages course. I designed a custom grammar, implemented a full lexical analyzer, and built a recursive-descent parser capable of validating and analyzing programs written in the statically-typed Pico language. This project required designing tokens, building a symbol table, handling errors cleanly, and producing structured parse output. It helped deepen my understanding of compiler design, lexing, parsing, and language theory.",
+    "Desc": "A full compiler front-end project written in Go, built for my Programming Languages course. Using a custom grammar, I implemented a full lexical analyzer, and built a recursive-descent parser capable of validating and analyzing programs. This project required designing tokens, building a symbol table, handling errors cleanly, and producing structured parse output. It helped deepen my understanding of compiler design, lexing, parsing, and language theory.",
     "GitHubRepo": "https://github.com/csc3310-fall2025/parser-millera31",
     "MainImage": "Parser.png",
     "DetailImages": []
