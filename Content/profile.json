@@ -24,7 +24,7 @@
     "EmploymentText": "At GreeneIS, I work as a Software Developer supporting automation and internal app development. My responsibilities include building n8n workflows, developing and maintaining Power Apps tools, integrating Teams chatbots with SharePoint and Dataverse, and helping organize and communicate project progress across the team. My work involves using APIs, cloud services, and data systems to streamline and automate internal IT processes.",
     "Skills": ["JavaScript", "React Native", "Node.js", "SQL", "R", "C++", "HTML", "CSS", "Go", "Prolog", "Scheme"],
     "SkillsText": "My strengths include full-stack development, automation, API integration, AI tools, compiler and language design basics, data modeling, and creating internal tools that solve real problems. I enjoy learning new technologies quickly and adapting them into real company workflows and school projects.",
-    "Resume": "MillerAllieResume.pdf"
+    "Resume": "Resume.pdf"
   },
   "Project1": {
     "Title": "MuscleMate (In Progress)",
