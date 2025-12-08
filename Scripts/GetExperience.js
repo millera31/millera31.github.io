@@ -96,6 +96,7 @@ function updateEducationSection(configData) {
 function updateEmploymentSection(configData) {
     const employment = document.querySelector("#pfEmployment");
     const role = document.querySelector("#pfRole");
+    const employmentDates = document.querySelector("#pfEmploymentDates");
     const employmentText = document.querySelector("#pfEmploymentText");
     
     if (employment && configData.Experience.Employment) {
@@ -104,6 +105,10 @@ function updateEmploymentSection(configData) {
     
     if (role && configData.Experience.Role) {
         role.textContent = configData.Experience.Role;
+    }
+    
+    if (employmentDates && configData.Experience.EmploymentDates) {
+        employmentDates.textContent = configData.Experience.EmploymentDates;
     }
     
     if (employmentText && configData.Experience.EmploymentText) {
@@ -120,10 +125,18 @@ function updateSkillsSection(configData) {
     const skillsText = document.querySelector("#pfSkillsText");
     
     if (skills && configData.Experience.Skills) {
-        // Convert skills array to comma-separated string
-        skills.textContent = Array.isArray(configData.Experience.Skills) 
+        // Handle skills string with bold formatting for "Programming Languages:"
+        const skillsStr = Array.isArray(configData.Experience.Skills) 
             ? configData.Experience.Skills.join(', ')
             : configData.Experience.Skills;
+        
+        // Replace "Programming Languages:" with bold version
+        const formattedSkills = skillsStr.replace(
+            /Programming Languages:/i, 
+            '<strong>Programming Languages:</strong>'
+        );
+        
+        skills.innerHTML = formattedSkills;
     }
     
     if (skillsText && configData.Experience.SkillsText) {

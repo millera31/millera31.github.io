@@ -1,7 +1,7 @@
 {
   "About": {
     "Name": "Allie Miller",
-    "Currently": "Computer Science Student | Data Analytics Minor",
+    "Currently": "Computer Science Major | Data Analytics Minor | Expected Graduation: June 2026",
     "Headshot": "AlliePic.JPG",
     "Thumbnail": "AlliePic.JPG",
     "AboutText": "Hi, I'm Allie Miller! I'm a software developer and computer science major at Seattle Pacific University graduating in June 2026. I’m passionate about building practical, real-world software, whether that’s mobile apps, internal automation tools, data workflows, or compiler front-end projects. I enjoy working across multiple languages and ecosystems, including C++, Go, JavaScript/React, SQL, and cloud-based AI tools. I love taking on technical challenges, understanding how systems work end-to-end, and creating solutions that make people’s lives easier. Outside of school, I work as a Software Developer at GreeneIS where I help build internal applications, develop Power Apps tools, design n8n workflow automations, support Teams chatbot integrations, and contribute to team communication and planning. I’m also continuously growing my technical skills through certifications, hands-on projects, and professional experience."
@@ -17,12 +17,13 @@
     "ExperienceText": "I’ve built experience across software development, workflow automation, and full-stack projects through my coursework, personal projects, and my role at GreeneIS. My technical background ranges from systems programming in C++ and building lexical/syntax analyzers in Go, to web development, Power Apps solutions, and cloud-based automation using n8n and Dataverse. I enjoy collaborating on teams, communicating clearly, and building tools that simplify processes and deliver real value.",
     "School": "Seattle Pacific University",
     "Major": "Computer Science Major, Data Analytics Minor",
-    "Graduation": "June 2026",
+    "Graduation": "Expected Graduation: June 2026",
     "EducationText": "At SPU, my coursework has built a strong foundation in software engineering, systems, data, and programming languages, including classes such as Systems Design, Data Structures, Database Systems, Software Engineering I, Netcentric Computing, Applications Programming, Computer Organization & Assembly Language, Concepts in Programming Languages, Introduction to Data Science, and Data and Society. My academic projects have helped me build strong technical foundations, including work in C++, Go, Scheme, Prolog, JavaScript/React, and SQL.",
     "Employment": "GreeneIS",
     "Role": "Software Developer",
+    "EmploymentDates": "September 2024 - Present",
     "EmploymentText": "At GreeneIS, I work as a Software Developer supporting automation and internal app development. My responsibilities include building n8n workflows, developing and maintaining Power Apps tools, integrating Teams chatbots with SharePoint and Dataverse, and helping organize and communicate project progress across the team. My work involves using APIs, cloud services, and data systems to streamline and automate internal IT processes.",
-    "Skills": ["JavaScript", "React Native", "Node.js", "SQL", "R", "C++", "HTML", "CSS", "Go", "Prolog", "Scheme"],
+    "Skills": "Programming Languages/Frameworks: JavaScript, React Native, Node.js, SQL, R, C++, HTML, CSS, Go, Prolog, Scheme",
     "SkillsText": "My strengths include full-stack development, automation, API integration, AI tools, compiler and language design basics, data modeling, and creating internal tools that solve real problems. I enjoy learning new technologies quickly and adapting them into real company workflows and school projects.",
     "Resume": "Resume.pdf"
   },
