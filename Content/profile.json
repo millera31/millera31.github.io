@@ -37,6 +37,7 @@
   "Project2": {
     "Title": "TripSplit (October 2025 - June 2026)",
     "Desc": "TripSplit is a cross-platform iOS/Android mobile app for splitting expenses on group trips. Built with React Native (Expo) on the front end and a Node.js/Express backend with a PostgreSQL database, it lets travelers create a trip, invite friends, log expenses with itemized splits, scan paper receipts with the camera (OCR + AI parsing), settle up via Venmo/Cash App/PayPal deep links, and track who owes whom in real time. Think Splitwise, but built around an actual trip with currency conversion, push notifications, and a tighter payment confirmation flow.",
+    "AppStore": "https://apps.apple.com/us/app/tripsplit-expense-sharing/id6761230723",
     "MainImage": "TripSplit_Logo.png",
     "DetailImages": [
       "IMG_6930.jpg",

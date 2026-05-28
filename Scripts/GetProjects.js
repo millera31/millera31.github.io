@@ -479,6 +479,19 @@ function initializePDFViewer() {
             }
         });
     }
+
+    // App Store handler - Project 2 (opens in new tab)
+    const appStore2 = document.querySelector("#appStore2");
+    if (appStore2) {
+        const storeUrl = configData?.Project2?.AppStore;
+        if (storeUrl) {
+            appStore2.addEventListener('click', () => {
+                window.open(storeUrl, '_blank', 'noopener,noreferrer');
+            });
+        } else {
+            appStore2.style.display = "none";
+        }
+    }
     
     // Close PDF handlers
     if (closePDF) {
