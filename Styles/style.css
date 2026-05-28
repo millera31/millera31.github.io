@@ -614,6 +614,38 @@ p {
     gap: 1.2rem;
 }
 
+/* Lightweight take-aways block for projects without the full Extended treatment */
+.project-takeaways {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(125, 78, 87, 0.05);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--border-radius-sm);
+}
+
+.project-takeaways h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text-dark);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.project-takeaways ul {
+    list-style: disc;
+    padding-left: 2rem;
+    margin: 0;
+    color: var(--color-text-medium);
+    font-size: 1.5rem;
+    line-height: 1.65;
+}
+
+.project-takeaways li {
+    margin: 0.4rem 0;
+}
+
 @keyframes extendedFadeIn {
     from { opacity: 0; transform: translateY(-4px); }
     to   { opacity: 1; transform: translateY(0); }

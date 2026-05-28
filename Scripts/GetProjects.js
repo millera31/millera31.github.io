@@ -120,6 +120,42 @@ function updateProject(projectNum, projectData) {
     if (extendedContainer && projectData.Extended) {
         renderExtended(extendedContainer, projectData.Extended);
     }
+
+    // Render lightweight take-aways block (used by projects without full Extended)
+    renderTakeAways(projectNum, projectData);
+}
+
+/**
+ * Renders a small "Key Take-Aways" list under a project's description.
+ * No-op for projects without TakeAways or with the full Extended section.
+ */
+function renderTakeAways(projectNum, projectData) {
+    const detail = document.querySelector(`#project${projectNum} .project-detail`);
+    if (!detail) return;
+
+    // Clear any prior render
+    const existing = detail.querySelector(".project-takeaways");
+    if (existing) existing.remove();
+
+    if (!Array.isArray(projectData.TakeAways) || projectData.TakeAways.length === 0) return;
+    if (projectData.Extended) return; // Extended cards already cover this
+
+    const block = document.createElement("div");
+    block.className = "project-takeaways";
+
+    const heading = document.createElement("h3");
+    heading.textContent = "Key Take-Aways";
+    block.appendChild(heading);
+
+    const list = document.createElement("ul");
+    projectData.TakeAways.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+    });
+    block.appendChild(list);
+
+    detail.appendChild(block);
 }
 
 /**

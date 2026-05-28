@@ -29,8 +29,12 @@
     "Resume": "Resume.pdf"
   },
   "Project1": {
-    "Title": "MuscleMate (In Progress)",
-    "Desc": "MuscleMate is a fitness-tracking app for intermediate and advanced lifters. It features customizable workout logging, a workout history to view past workouts, progress tracking for key lifts, and a coach view where coaches can monitor clients' progress. The app avoids unnecessary pre-made templates and form tutorials, focusing instead on user customization.",
+    "Title": "MuscleMate (CSC 3150, Spring 2024)",
+    "Desc": "MuscleMate is a systems-design project for a fitness-tracking app aimed at intermediate and advanced lifters. The deliverables (System Proposal and System Specification, linked below) cover the requirements, architecture, user roles, and feature design for the planned app rather than a working implementation, so there is no tech stack to list. The planned app features customizable workout logging, a workout history, progress tracking for key lifts, and a coach view where coaches can monitor clients' progress, deliberately avoiding pre-made templates and form tutorials in favor of user customization.",
+    "TakeAways": [
+      "Translating vague user goals into structured deliverables. The hardest part wasn't sketching screens, it was writing a System Proposal and System Specification that another developer could pick up and actually implement from.",
+      "Scoping decisions are part of the design. Deciding what not to build (no pre-made templates, no form tutorials) shaped the spec just as much as choosing which features to include."
+    ],
     "MainImage": "MuscleMate.png",
     "DetailImages": ["MuscleMateHP.png"]
   },
@@ -113,15 +117,23 @@
     }
   },
   "Project3": {
-    "Title": "Go Syntax Parser & Lexical Analyzer",
+    "Title": "Go Syntax Parser & Lexical Analyzer (CSC 3310, Fall 2025)",
     "Desc": "A full compiler front-end project written in Go, built for my Programming Languages course. Using a custom grammar, I implemented a full lexical analyzer, and built a recursive-descent parser capable of validating and analyzing programs. This project required designing tokens, building a symbol table, handling errors cleanly, and producing structured parse output. It helped deepen my understanding of compiler design, lexing, parsing, and language theory.",
+    "TakeAways": [
+      "Got concrete intuition for how compilers actually work end-to-end. Writing the lexer and recursive-descent parser by hand demystified what 'parsing' really means and how a symbol table threads through the rest of the pipeline.",
+      "Designing for clean errors is its own skill. Producing useful, structured error output (instead of crashing on the first bad token) forced me to think carefully about how the parser should recover and continue analyzing after invalid input."
+    ],
     "GitHubRepo": "https://github.com/csc3310-fall2025/parser-millera31",
     "MainImage": "Parser.png",
     "DetailImages": []
   },
   "Project4": {
-    "Title": "Desegregating Schools - Data Analytics Project",
+    "Title": "Desegregating Schools (DAT 4500, Spring 2025)",
     "Desc": "Desegregating Schools: Charlotte & Seattle is a data science project examining how school diversity relates to neighborhood rent levels in Seattle and Charlotte. Our team combined public school enrollment data, census variables, GIS shapefiles, and rent datasets to analyze spatial patterns of segregation and housing affordability. I led the Seattle data work, including cleaning enrollment data, creating a school-to-neighborhood matching table, merging spatial files, and producing the Seattle scatterplot showing the relationship between rent and percent students of color. As a team, we built maps, scatterplots, and an interactive Shiny app using R (ggplot2, sf, tmap, leaflet) to compare citywide trends. Our findings show clear disparities: schools in higher-rent neighborhoods tend to enroll fewer students of color, while more affordable areas are significantly more diverse. The project highlights how housing patterns and gentrification continue to shape educational equity.",
+    "TakeAways": [
+      "Most of a real data project is data prep, not modeling. Cleaning enrollment files, building the school-to-neighborhood matching table, and merging GIS shapefiles with rent datasets took far longer than producing the final visualizations.",
+      "Learned R's spatial ecosystem (ggplot2, sf, tmap, leaflet) and how to combine GIS shapefiles with tabular data to tell a single clear story, in this case how housing patterns and gentrification continue to shape educational equity."
+    ],
     "GitHubRepo": "https://github.com/millera31/desegregating-schools",
     "MainImage": "Scatterplot.png",
     "LiveDemo": "https://millera31.github.io/desegregating-schools/",
