@@ -99,11 +99,171 @@ function updateProject(projectNum, projectData) {
             repo.style.display = "none";
         }
     }
-    
+
+    // Optional note shown when the repo is intentionally kept private
+    const repoNote = document.querySelector(`#pfProject${projectNum}RepoNote`);
+    if (repoNote) {
+        if (!projectData.GitHubRepo && projectData.RepoNote) {
+            repoNote.textContent = projectData.RepoNote;
+        } else {
+            repoNote.style.display = "none";
+        }
+    }
+
     // Hide "See More" button if no detail images
     if (button && (!projectData.DetailImages || projectData.DetailImages.length < 1)) {
         button.style.display = "none";
     }
+
+    // Render rich/extended content if present
+    const extendedContainer = document.querySelector(`#pfProject${projectNum}Extended`);
+    if (extendedContainer && projectData.Extended) {
+        renderExtended(extendedContainer, projectData.Extended);
+    }
+}
+
+/**
+ * Renders an extended project section (purpose, tech, lessons, etc.).
+ * @param {HTMLElement} container - Target container element
+ * @param {Object} ext - Extended content object from profile.json
+ */
+function renderExtended(container, ext) {
+    container.innerHTML = "";
+    const frag = document.createDocumentFragment();
+
+    if (ext.Purpose) {
+        frag.appendChild(buildSection("Purpose & Why It Mattered", paragraph(ext.Purpose), { open: true }));
+    }
+
+    if (Array.isArray(ext.Technologies) && ext.Technologies.length) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "tech-groups";
+        ext.Technologies.forEach(group => {
+            const groupEl = document.createElement("div");
+            groupEl.className = "tech-group";
+
+            const heading = document.createElement("h4");
+            heading.textContent = group.group;
+            groupEl.appendChild(heading);
+
+            const list = document.createElement("ul");
+            list.className = "extended-list";
+            (group.items || []).forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                list.appendChild(li);
+            });
+            groupEl.appendChild(list);
+            wrapper.appendChild(groupEl);
+        });
+        frag.appendChild(buildSection("Technologies & Libraries", wrapper));
+    }
+
+    if (Array.isArray(ext.Lessons) && ext.Lessons.length) {
+        frag.appendChild(buildSection("What I Got Out of It", renderLessonContent(ext.Lessons)));
+    }
+
+    if (Array.isArray(ext.TeamLessons) && ext.TeamLessons.length) {
+        frag.appendChild(buildSection("Team Lessons", renderLessonContent(ext.TeamLessons)));
+    }
+
+    if (Array.isArray(ext.KnownIssues) && ext.KnownIssues.length) {
+        frag.appendChild(buildSection("Known Bugs & Shortcomings", plainList(ext.KnownIssues)));
+    }
+
+    if (Array.isArray(ext.Improvements) && ext.Improvements.length) {
+        frag.appendChild(buildSection("Improvements I'd Like to Make", plainList(ext.Improvements)));
+    }
+
+    container.appendChild(frag);
+}
+
+/**
+ * Builds a collapsible <details> section with a styled summary header.
+ * @param {string} title - Section heading
+ * @param {Node} contentNode - Rendered body content
+ * @param {{open?: boolean}} [options]
+ */
+function buildSection(title, contentNode, options = {}) {
+    const details = document.createElement("details");
+    details.className = "extended-section";
+    if (options.open) details.open = true;
+
+    const summary = document.createElement("summary");
+    summary.className = "extended-summary";
+
+    const heading = document.createElement("span");
+    heading.className = "extended-summary-title";
+    heading.textContent = title;
+    summary.appendChild(heading);
+
+    const chevron = document.createElement("span");
+    chevron.className = "extended-chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    summary.appendChild(chevron);
+
+    details.appendChild(summary);
+
+    const body = document.createElement("div");
+    body.className = "extended-body";
+    body.appendChild(contentNode);
+    details.appendChild(body);
+
+    return details;
+}
+
+function paragraph(text) {
+    const p = document.createElement("p");
+    p.textContent = text;
+    return p;
+}
+
+function plainList(items) {
+    const list = document.createElement("ul");
+    list.className = "extended-list";
+    items.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+    });
+    return list;
+}
+
+function titledList(items) {
+    const list = document.createElement("ul");
+    list.className = "extended-list titled";
+    items.forEach(item => {
+        const li = document.createElement("li");
+        const strong = document.createElement("strong");
+        strong.textContent = item.title + ":";
+        li.appendChild(strong);
+        li.appendChild(document.createTextNode(" " + item.body));
+        list.appendChild(li);
+    });
+    return list;
+}
+
+function paragraphStack(texts) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "paragraph-stack";
+    texts.forEach(text => {
+        const p = document.createElement("p");
+        p.textContent = text;
+        wrapper.appendChild(p);
+    });
+    return wrapper;
+}
+
+/**
+ * Renders a Lessons / TeamLessons block. Accepts either:
+ *   - An array of strings (paragraph copy)
+ *   - An array of {title, body} objects (titled bullets)
+ */
+function renderLessonContent(items) {
+    if (items.every(item => typeof item === "string")) {
+        return paragraphStack(items);
+    }
+    return titledList(items);
 }
 
 /* ===================================
@@ -144,13 +304,19 @@ function initializeCarousel() {
         });
     }
     
-    // Escape key to close
+    // Keyboard navigation
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && modalPage?.style.display === 'block') {
+        const isOpen = modalPage?.style.display === 'flex';
+        if (!isOpen) return;
+        if (event.key === 'Escape') {
             closeCarousel();
+        } else if (event.key === 'ArrowRight') {
+            showImages(++slideIdx);
+        } else if (event.key === 'ArrowLeft') {
+            showImages(--slideIdx);
         }
     });
-    
+
     // Project open buttons
     setupProjectButtons();
 }
@@ -187,11 +353,12 @@ function setupProjectButtons() {
  */
 function openCarousel(images) {
     if (!images || images.length === 0) return;
-    
+
     addImages(images);
+    slideIdx = 1; // Always start from the first image
     const modalPage = document.querySelector("#modalPage");
     if (modalPage) {
-        modalPage.style.display = "block";
+        modalPage.style.display = "flex";
         document.body.classList.add('no-scroll'); // Prevent background scrolling
     }
     showImages(slideIdx);
@@ -236,21 +403,28 @@ function addImages(imgs) {
  */
 function showImages(n) {
     const slides = document.querySelectorAll("#imgList > img");
-    
+
     if (slides.length === 0) return;
-    
+
     // Wrap around logic
     if (n > slides.length) slideIdx = 1;
     if (n < 1) slideIdx = slides.length;
-    
+
     // Hide all slides
     slides.forEach(slide => {
-        slide.style.display = "none";
+        slide.classList.remove("active");
     });
-    
+
     // Show current slide
     if (slides[slideIdx - 1]) {
-        slides[slideIdx - 1].style.display = "block";
+        slides[slideIdx - 1].classList.add("active");
+    }
+
+    // Update counter
+    const counter = document.querySelector("#imgCounter");
+    if (counter) {
+        counter.textContent = `${slideIdx} / ${slides.length}`;
+        counter.style.display = slides.length > 1 ? "block" : "none";
     }
 }
 

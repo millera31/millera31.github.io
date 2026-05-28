@@ -79,26 +79,36 @@ function updateAboutSection(configData) {
  */
 function updateContactSection(configData) {
     const email = document.querySelector("#pfEmail");
+    const email2 = document.querySelector("#pfEmail2");
+    const email2Container = document.querySelector("#elEmail2");
     const phone = document.querySelector("#pfPhone");
     const phoneContainer = document.querySelector("#elPhone");
-    
-    // Update email
+
+    // Update primary email
     if (email && configData.Contact.EMail) {
         email.href = `mailto:${configData.Contact.EMail}`;
         email.textContent = configData.Contact.EMail;
     }
-    
+
+    // Update secondary email (if provided)
+    if (configData.Contact.EMail2) {
+        if (email2) {
+            email2.href = `mailto:${configData.Contact.EMail2}`;
+            email2.textContent = configData.Contact.EMail2;
+        }
+    } else if (email2Container) {
+        email2Container.style.display = "none";
+    }
+
     // Update phone (if provided)
     if (configData.Contact.Phone) {
         if (phone) {
             phone.href = `tel:${configData.Contact.Phone}`;
             phone.textContent = configData.Contact.Phone;
         }
-    } else {
+    } else if (phoneContainer) {
         // Hide phone section if no phone number provided
-        if (phoneContainer) {
-            phoneContainer.style.display = "none";
-        }
+        phoneContainer.style.display = "none";
     }
 }
 

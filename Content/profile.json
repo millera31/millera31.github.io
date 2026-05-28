@@ -8,6 +8,7 @@
   },
   "Contact": {
     "EMail": "millera31@spu.edu",
+    "EMail2": "alliemiller576@gmail.com",
     "Phone": "(206) 518-0070",
     "Portfolio": "https://www.github.com",
     "LinkedIn": "https://www.linkedin.com/in/allie-a-miller",
@@ -35,9 +36,80 @@
   },
   "Project2": {
     "Title": "TripSplit (Expected Completion: June 2026)",
-    "Desc": "TripSplit is a mobile expense-splitting app designed for group travel. It uses AI-powered receipt scanning to automatically extract itemized costs, calculate fair splits, and track who owes what in real-time. Built with React Native, Node.js, and SQL, TripSplit eliminates the hassle of managing shared travel expenses with features like offline support, duplicate receipt detection, and customizable expense splitting. My main role is working on the frontend of the app.",
+    "Desc": "TripSplit is a cross-platform iOS/Android mobile app for splitting expenses on group trips. Built with React Native (Expo) on the front end and a Node.js/Express backend with a PostgreSQL database, it lets travelers create a trip, invite friends, log expenses with itemized splits, scan paper receipts with the camera (OCR + AI parsing), settle up via Venmo/Cash App/PayPal deep links, and track who owes whom in real time. Think Splitwise, but built around an actual trip with currency conversion, push notifications, and a tighter payment confirmation flow.",
     "MainImage": "TripSplit_Logo.png",
-    "DetailImages": []
+    "DetailImages": [
+      "IMG_6930.jpg",
+      "IMG_6931.jpg",
+      "IMG_6932.jpg",
+      "IMG_6933.jpg",
+      "IMG_6934.jpg",
+      "IMG_6935.jpg",
+      "IMG_6936.jpg",
+      "IMG_6937.jpg",
+      "IMG_6938.jpg",
+      "IMG_6939.jpg"
+    ],
+    "RepoNote": "Source repository kept private: available on request.",
+    "Extended": {
+      "Purpose": "TripSplit was inspired by the frustration of managing shared expenses during group travel. Splitting costs usually meant manually tracking receipts, calculating balances, and sorting out payments afterward, so I wanted to create a smoother experience that handled those steps in one place. The project also pushed me technically because it was the first time I built and connected a complete full-stack system, including the frontend, backend, database, authentication, OCR integration, and deployment.",
+      "Technologies": [
+        {
+          "group": "Frontend (React Native / Expo, TypeScript)",
+          "items": [
+            "Expo Router (file-based routing), Expo Image Picker, Expo Image Manipulator, Expo Notifications, Expo Constants",
+            "Firebase Authentication (email/password, email verification, persistent sessions via AsyncStorage)",
+            "@react-native-ml-kit/text-recognition for on-device receipt OCR",
+            "React Navigation, React Native Gesture Handler"
+          ]
+        },
+        {
+          "group": "Backend (Node.js, Express)",
+          "items": [
+            "Prisma ORM + PostgreSQL",
+            "Firebase Admin SDK for token verification",
+            "Resend for transactional email (verification, password reset)",
+            "A local Ollama LLM (llama3.1) called via an HTTP adapter to parse OCR'd receipt text into structured expense data (merchant, line items, tax, tip, total, currency)",
+            "JWT, bcrypt, and Zod for validation"
+          ]
+        },
+        {
+          "group": "Infrastructure",
+          "items": [
+            "Docker Compose for local dev (Postgres + API + ngrok + Expo)",
+            "AWS Elastic Beanstalk for production deployment, Let's Encrypt for HTTPS",
+            "EAS Build for iOS dev/release builds"
+          ]
+        }
+      ],
+      "Lessons": [
+        "Building TripSplit taught me how much coordination goes into a real full-stack application beyond just writing frontend code. I learned how to design APIs, structure and connect a database, handle authentication and state management, debug issues across multiple systems, and integrate external services like OCR for receipt scanning. It also gave me experience thinking about usability and edge cases, since small details in expense splitting and payment flows had a big impact on the user experience.",
+        "The project also helped me become more comfortable working in a team environment. I collaborated through Git and pull requests, worked across shared codebases, participated in testing and demos, and learned how to balance technical decisions with deadlines and MVP scope. It was the first project where I felt like I was building something that resembled a real production application instead of just a class assignment."
+      ],
+      "TeamLessons": [
+        {
+          "title": "Branch hygiene matters",
+          "body": "Working on a long-lived feature branch while teammates also pushed to main meant repeated merges. I learned to pull main often, resolve conflicts in small chunks rather than mega-merges, and document Mac-local config (Dockerfile tweaks, package.json deltas) that should not be pushed."
+        },
+        {
+          "title": "Async coordination via commits",
+          "body": "With no real-time pair programming, the commit message was the handoff. Clear, scoped commits like 'fix: trip add-member optimistic Invited pill + per-row spinner; no full reload' told my teammate exactly what changed without needing a meeting."
+        }
+      ],
+      "KnownIssues": [
+        "iOS receipt crop is locked to a square. Apple's native UIImagePickerController doesn't support non-square crop areas, so tall receipts get cut off. Working around this requires either a third-party native library (react-native-image-crop-picker) or a custom JS crop screen.",
+        "Email service is fragile. The Resend client is instantiated at module load, so if RESEND_API_KEY is missing the entire backend crashes on boot instead of degrading gracefully.",
+        "We don’t have many automated tests.",
+        "OCR + LLM accuracy varies. Long receipts, dim lighting, and non-USD currencies all degrade results."
+      ],
+      "Improvements": [
+        "Replace Expo's image picker with react-native-image-crop-picker for proper 4-corner freeform crop on receipts (both platforms).",
+        "Add a real test suite: Jest for backend, React Native Testing Library for components.",
+        "Make the email service lazy-init so a missing API key warns instead of crashing.",
+        "Apple Pay functionality alongside the existing Venmo / Cash App / PayPal options.",
+        "Server-side receipt-image storage (currently the photo is OCR'd locally and only the text is sent, so saving the image would let users review original receipts later)."
+      ]
+    }
   },
   "Project3": {
     "Title": "Go Syntax Parser & Lexical Analyzer",

@@ -43,6 +43,55 @@
             <p>These projects showcase my technical growth across software development, from mobile apps and web development to compiler design and data science. Each project reflects my ability to work independently and collaboratively, solve complex problems, and deliver functional solutions using diverse technologies including React Native, Go, R, JavaScript, and SQL.</p>
         </section>
 
+        <!-- Team Projects Section -->
+        <section class="projects-category">
+            <h2 class="category-title">Team Projects</h2>
+
+            <!-- Project 2 - TripSplit -->
+            <article id="project2" class="project project-expanded">
+                <div class="project-image">
+                    <img id="pfProject2Img" src="" alt="Project 2 screenshot">
+                    <button id="openProject2" value="2" aria-label="Tour the TripSplit app screenshots">
+                        Tour the App
+                    </button>
+                    <!-- Document links for PDFs -->
+                    <div class="document-links">
+                        <button id="viewProposal2" class="doc-button" aria-label="View TripSplit Proposal PDF">
+                            Team Proposal
+                        </button>
+                    </div>
+                </div>
+                <div class="project-detail">
+                    <h2 id="pfProject2Title"></h2>
+                    <p id="pfProject2Desc"></p>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="pfProject2Repo">GitHub Repository</a>
+                    <p id="pfProject2RepoNote" class="repo-note"></p>
+                    <div id="pfProject2Extended" class="project-extended"></div>
+                </div>
+            </article>
+
+            <!-- Project 4 - Desegregating Schools -->
+            <article id="project4" class="project">
+                <div class="project-image">
+                    <img id="pfProject4Img" src="" alt="Project 4 screenshot">
+                    <button id="openProject4" value="4" aria-label="View more images for this project">
+                        See More...
+                    </button>
+                    <!-- Live Demo Button -->
+                    <div class="document-links">
+                        <button id="liveDemo4" class="demo-button" aria-label="View live demo">
+                            View Website
+                        </button>
+                    </div>
+                </div>
+                <div class="project-detail">
+                    <h2 id="pfProject4Title"></h2>
+                    <p id="pfProject4Desc"></p>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="pfProject4Repo">GitHub Repository</a>
+                </div>
+            </article>
+        </section>
+
         <!-- Solo Projects Section -->
         <section class="projects-category">
             <h2 class="category-title">Solo Projects</h2>
@@ -51,7 +100,7 @@
             <article id="project1" class="project">
                 <div class="project-image">
                     <img id="pfProject1Img" src="" alt="Project 1 screenshot">
-                
+
                     <!-- Document links for PDFs -->
                     <div class="document-links">
                         <button id="viewProposal1" class="doc-button" aria-label="View System Proposal PDF">
@@ -85,60 +134,26 @@
             </article>
         </section>
 
-        <!-- Team Projects Section -->
-        <section class="projects-category">
-            <h2 class="category-title">Team Projects</h2>
-
-            <!-- Project 2 - TripSplit -->
-            <article id="project2" class="project">
-                <div class="project-image">
-                    <img id="pfProject2Img" src="" alt="Project 2 screenshot">
-                    <button id="openProject2" value="2" aria-label="View more images for this project">
-                        See More...
-                    </button>
-                    <!-- Document links for PDFs -->
-                    <div class="document-links">
-                        <button id="viewProposal2" class="doc-button" aria-label="View TripSplit Proposal PDF">
-                            Team Proposal
-                        </button>
-                    </div>
-                </div>
-                <div class="project-detail">
-                    <h2 id="pfProject2Title"></h2>
-                    <p id="pfProject2Desc"></p>
-                    <a href="" target="_blank" rel="noopener noreferrer" id="pfProject2Repo">GitHub Repository</a>
-                </div>
-            </article>
-
-            <!-- Project 4 - Desegregating Schools -->
-            <article id="project4" class="project">
-                <div class="project-image">
-                    <img id="pfProject4Img" src="" alt="Project 4 screenshot">
-                    <button id="openProject4" value="4" aria-label="View more images for this project">
-                        See More...
-                    </button>
-                    <!-- Live Demo Button -->
-                    <div class="document-links">
-                        <button id="liveDemo4" class="demo-button" aria-label="View live demo">
-                            View Website
-                        </button>
-                    </div>
-                </div>
-                <div class="project-detail">
-                    <h2 id="pfProject4Title"></h2>
-                    <p id="pfProject4Desc"></p>
-                    <a href="" target="_blank" rel="noopener noreferrer" id="pfProject4Repo">GitHub Repository</a>
-                </div>
-            </article>
-        </section>
-
         <!-- Image Carousel Modal -->
         <div id="modalPage" role="dialog" aria-label="Image carousel" aria-modal="true">
             <div class="carousel">
-                <button id="XOut" aria-label="Close carousel">&times;</button>
+                <button id="XOut" aria-label="Close carousel">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M6 6 L18 18 M18 6 L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </button>
                 <div id="imgList" role="region" aria-live="polite"></div>
-                <button id="prev" aria-label="Previous image">&#10094;</button>
-                <button id="next" aria-label="Next image">&#10095;</button>
+                <button id="prev" aria-label="Previous image">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M15 5 L8 12 L15 19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </button>
+                <button id="next" aria-label="Next image">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M9 5 L16 12 L9 19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </button>
+                <div id="imgCounter" aria-live="polite"></div>
             </div>
         </div>
 
